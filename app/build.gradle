@@ -26,6 +26,6 @@ android {
 }
 
 dependencies {
-    implementation 'io.github.oneuiproject.sesl:preference:v1.1.0'
-    implementation 'io.github.oneuiproject.sesl:material:v1.1.0'
+    implementation 'io.github.oneuiproject.sesl:preference:1.1.0'
+    implementation 'io.github.oneuiproject.sesl:material:1.1.0'
 }
