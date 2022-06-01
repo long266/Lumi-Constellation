@@ -13,4 +13,6 @@
 
     <style name="ToolbarStyle" parent="@style/Theme.AppCompat.DayNight" />
 
+    <style name="CollapsingToolbarLayoutStyle" parent="Widget.Design.CollapsingToolbar" />
+
 </resources>
