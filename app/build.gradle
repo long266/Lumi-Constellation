@@ -6,7 +6,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.android.systemui.mod"
+        applicationId "com.nhlong.lumi.constellation"
         minSdk 23
         targetSdk 31
         versionCode 1
@@ -27,6 +27,7 @@ android {
 
 dependencies {
     implementation 'io.github.oneuiproject.sesl:appcompat:1.1.0'
+    implementation 'io.github.oneuiproject.sesl:coordinatorlayout:1.0.0'
     implementation 'io.github.oneuiproject.sesl:core:1.1.0'
     implementation 'io.github.oneuiproject.sesl:preference:1.1.0'
     implementation 'io.github.oneuiproject.sesl:material:1.1.0'
@@ -35,6 +36,7 @@ dependencies {
 
 configurations.all {
     exclude group: 'androidx.appcompat', module: 'appcompat'
+    exclude group: 'androidx.coordinatorlayout', module: 'coordinatorlayout'
     exclude group: 'androidx.core', module: 'core'
     exclude group: 'androidx.preference', module: 'preference'
     exclude group: 'com.google.android.material', module: 'material'

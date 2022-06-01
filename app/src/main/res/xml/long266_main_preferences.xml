@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory app:title="Test">
+
+        <SwitchPreferenceCompat
+            app:key="stock_battery"
+            app:summaryOn="Shown"
+            app:summaryOff="Hidden"
+            app:title="Statusbar Battery"
+            app:useSimpleSummaryProvider="true" />
+
+        <SwitchPreferenceCompat
+            app:key="display_battery_percentage"
+            app:title="Battery Percentage"
+            app:useSimpleSummaryProvider="true"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
