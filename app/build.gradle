@@ -30,6 +30,7 @@ dependencies {
     implementation 'io.github.oneuiproject.sesl:core:1.1.0'
     implementation 'io.github.oneuiproject.sesl:preference:1.1.0'
     implementation 'io.github.oneuiproject.sesl:material:1.1.0'
+    implementation 'io.github.oneuiproject.sesl:picker-color:1.0.1'
 }
 
 configurations.all {
