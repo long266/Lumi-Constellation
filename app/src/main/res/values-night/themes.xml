@@ -4,7 +4,7 @@
         <item name="android:colorControlActivated">@color/color_control_activated</item>
         <item name="selectableItemBackground">@drawable/sesl_action_bar_item_background</item>
         <item name="android:colorPrimary">@color/color_primary_dark</item>
-        <item name="android:statusBarColor">@color/sesl_background_color_dark</item>
+        <item name="android:statusBarColor">@color/sesl_action_bar_background_color_dark</item>
         <item name="android:windowLightStatusBar">@bool/window_light_statusbar</item>
         <item name="android:windowLightNavigationBar">@bool/window_light_statusbar</item>
         <item name="colorControlActivated">@color/color_control_activated</item>

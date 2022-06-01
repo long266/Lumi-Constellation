@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="hoanglong_sesl_background_color">@color/sesl_background_color_dark</color>
+	<color name="hoanglong_sesl_action_bar_background_color">@color/sesl_action_bar_background_color_dark</color>
+</resources>

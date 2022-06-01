@@ -1,6 +1,8 @@
 package com.nhlong.lumi.constellation;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,6 +28,14 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     public static class SettingsFragment extends PreferenceFragmentCompat {
+
+		private Context mContext;
+		
+        @Override
+        public void onViewCreated(View view, Bundle savedInstanceState) {
+            super.onViewCreated(view, savedInstanceState);
+            getView().setBackgroundColor(getResources().getColor(R.color.hoanglong_sesl_background_color));
+        }
 
         @Override
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {

@@ -6,4 +6,6 @@
     <color name="color_primary_dark">#ff0072de</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+	<color name="hoanglong_sesl_background_color">@color/sesl_background_color_light</color>
+	<color name="hoanglong_sesl_action_bar_background_color">@color/sesl_action_bar_background_color_light</color>
 </resources>
