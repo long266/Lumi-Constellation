@@ -27,6 +27,8 @@ import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.SwitchPreferenceCompat;
 
+import com.google.android.material.appbar.CollapsingToolbarLayout;
+
 import java.io.File;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -50,6 +52,10 @@ public class QuickSettingsActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_quicksettings);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+        CollapsingToolbarLayout ctbl = (CollapsingToolbarLayout) findViewById(R.id.collapsing_app_bar_qs);
+		ctbl.setTitle("Quick Setings");
 
         ROMCFG_FOLDER = getResources().getString(R.string.romcfg_folder);
         MODCFG_FOLDER = getResources().getString(R.string.modcfg_folder);

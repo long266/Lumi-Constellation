@@ -4,4 +4,9 @@
     <string name="lumi_dark_mode_def_value">0</string>
     <string name="romcfg_folder"></string>
     <string name="modcfg_folder"></string>
+	
+    <string name="lumi_quick_settings_title">Quick Settings</string>
+    <string name="lumi_navigation_bar_title">Navigation Bar</string>
+    <string name="lumi_add_ons_title">Add Ons</string>
+    <string name="lumi_status_bar_title">Status Bar</string>
 </resources>

@@ -19,13 +19,11 @@
 			style="@style/Widget.Design.AppBarLayout">
 
             <com.google.android.material.appbar.CollapsingToolbarLayout 
-                android:id="@+id/collapsing_app_bar" 
+                android:id="@+id/collapsing_app_bar_addons" 
 				android:background="@android:color/transparent" 
 				android:layout_width="fill_parent" 
 				android:layout_height="fill_parent" 
 				app:layout_scrollFlags="scroll|exitUntilCollapsed" 
-				app:title="Add-Ons" 
-				app:titleEnabled="true" 
 				style="@style/CollapsingToolbarLayoutStyle">
 
                 <androidx.appcompat.widget.Toolbar 
@@ -34,6 +32,7 @@
 					android:id="@+id/toolbar_addons" 
 					android:layout_width="fill_parent" 
 					android:layout_height="?android:actionBarSize" 
+					app:layout_collapseMode="pin"
 					app:contentInsetEnd="@dimen/sesl_action_bar_content_inset" 
 					app:contentInsetStart="@dimen/sesl_action_bar_content_inset" />
 
@@ -41,17 +40,11 @@
 
         </com.google.android.material.appbar.AppBarLayout>
 
-        <androidx.core.widget.NestedScrollView 
-            android:layout_width="fill_parent" 
+        <FrameLayout 
+			android:id="@+id/settings_addons" 
+			android:layout_width="fill_parent" 
 			android:layout_height="fill_parent" 
-			app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-            <FrameLayout 
-			    android:id="@+id/settings_addons" 
-				android:layout_width="fill_parent" 
-				android:layout_height="fill_parent" />
-
-        </androidx.core.widget.NestedScrollView>
+			app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

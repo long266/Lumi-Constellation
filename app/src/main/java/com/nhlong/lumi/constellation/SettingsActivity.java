@@ -8,6 +8,10 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
+import androidx.appcompat.widget.Toolbar;
+
+import com.google.android.material.appbar.CollapsingToolbarLayout;
+
 import android.preference.PreferenceManager;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
@@ -26,10 +30,13 @@ public class SettingsActivity extends AppCompatActivity implements SharedPrefere
                     .replace(R.id.settings, new SettingsFragment())
                     .commit();
         }
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-        }
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+
+        CollapsingToolbarLayout ctbl = (CollapsingToolbarLayout) findViewById(R.id.collapsing_app_bar);
+        ctbl.setTitle("Lumi\'s Constellation");
 
         PreferenceManager.getDefaultSharedPreferences(this)
                 .registerOnSharedPreferenceChangeListener(this);
