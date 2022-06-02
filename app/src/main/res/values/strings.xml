@@ -2,4 +2,6 @@
     <string name="lumi_settings">Lumi\'s Constellation</string>
     <string name="lumi_dark_mode">lumi_night_mode_section</string>
     <string name="lumi_dark_mode_def_value">0</string>
+    <string name="romcfg_folder"></string>
+    <string name="modcfg_folder"></string>
 </resources>

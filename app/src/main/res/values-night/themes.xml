@@ -11,7 +11,7 @@
         <item name="colorPrimary">@color/color_primary_dark</item>
     </style>
 
-    <style name="ToolbarStyle" parent="@style/Theme.AppCompat.DayNight" />
+    <style name="ToolbarStyle" parent="Theme.AppCompat.DayNight" />
 
     <style name="CollapsingToolbarLayoutStyle" parent="Widget.Design.CollapsingToolbar" />
 

@@ -10,17 +10,29 @@
             android:entries="@array/lumi_dark_mode_entries"
             android:entryValues="@array/lumi_dark_mode_values" />
 
-        <SwitchPreferenceCompat
-            app:key="stock_battery"
-            app:summaryOn="Shown"
-            app:summaryOff="Hidden"
-            app:title="Statusbar Battery"
-            app:useSimpleSummaryProvider="true" />
+        <PreferenceScreen
+            app:title="Status Bar"
+            app:summary="Customize your status bar">
+                <intent android:action=".StatusBarActivity"/>
+        </PreferenceScreen>
 
-        <SwitchPreferenceCompat
-            app:key="display_battery_percentage"
-            app:title="Battery Percentage"
-            app:useSimpleSummaryProvider="true"/>
+        <PreferenceScreen
+            app:title="Navigation Bar"
+            app:summary="Customize your navigation bar">
+                <intent android:action=".NavBarActivity"/>
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            app:title="Quick Settings"
+            app:summary="Customize your QS Panel">
+                <intent android:action=".QuickSettingsActivity"/>
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            app:title="NL Add-ons"
+            app:summary="Extra customization">
+                <intent android:action=".AddOnActivity"/>
+        </PreferenceScreen>
 
     </PreferenceCategory>
 
