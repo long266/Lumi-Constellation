@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ToolbarLayout -->
+    <style name="LumiMultiSelectionCheckboxTextStyle">
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">12dp</item>
+        <item name="android:textColor">@color/sesl_action_bar_text_color_title_dark</item>
+        <item name="android:fontFamily">@string/sesl_font_family_regular</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+</resources>

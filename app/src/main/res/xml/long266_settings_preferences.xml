@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory app:title="Test">
+	
+        <ListPreference 
+            android:key="@string/lumi_dark_mode"
+            android:title="Night Mode"
+            android:entries="@array/lumi_dark_mode_entries"
+            android:entryValues="@array/lumi_dark_mode_values" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

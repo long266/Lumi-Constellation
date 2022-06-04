@@ -1,5 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="lumi_settings">Lumi\'s Constellation</string>
+    <string name="lumi_main">Lumi\'s Constellation</string>
+    <string name="lumi_settings">Settings</string>
     <string name="lumi_dark_mode">lumi_night_mode_section</string>
     <string name="lumi_dark_mode_def_value">0</string>
     <string name="romcfg_folder"></string>
@@ -9,4 +11,16 @@
     <string name="lumi_navigation_bar_title">Navigation Bar</string>
     <string name="lumi_add_ons_title">Add Ons</string>
     <string name="lumi_status_bar_title">Status Bar</string>
+
+	<string name="lumi_action_settings">Settings</string>
+	
+    <!-- ToolbarLayout -->
+    <string name="lumi_navigation_drawer">Navigation drawer</string>
+    <string name="lumi_action_mode_all_checkbox">All</string>
+    <string name="lumi_action_mode_n_selected">%d selected</string>
+    <string name="lumi_action_mode_select_items">Select items</string>
+
+    <!-- GridMenuDialog -->
+    <string name="lumi_new_badge_text">N</string>
+
 </resources>

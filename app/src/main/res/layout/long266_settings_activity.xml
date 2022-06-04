@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lumi.constellation.layout.ToolbarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/lumiToolbarSettings"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:expanded="true"
+	app:navigationIcon="@drawable/lumi_ic_ab_back"
+    app:title="@string/lumi_settings">
+
+    <FrameLayout
+        android:id="@+id/lumi_settings"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+		android:background="@color/lumi_background_color"
+		app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+</lumi.constellation.layout.ToolbarLayout>

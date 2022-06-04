@@ -6,6 +6,16 @@
     <color name="color_primary_dark">#ff0072de</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-	<color name="hoanglong_sesl_background_color">@color/sesl_background_color_light</color>
-	<color name="hoanglong_sesl_action_bar_background_color">@color/sesl_action_bar_background_color_light</color>
+	
+    <!-- ToolbarLayout -->
+    <color name="lumi_n_badge_background_color">#ffef5e16</color>
+    <color name="lumi_n_badge_text_color">@color/sesl_white</color>
+
+    <!-- DrawerLayout -->
+    <color name="lumi_drawerlayout_drawer_dim_color">#33000000</color>
+    <color name="lumi_drawerlayout_header_icon_color">#ff676768</color>
+
+    <color name="lumi_round_and_bgcolor">@color/sesl_round_and_bgcolor_light</color>
+    <color name="lumi_background_color">@color/sesl_background_color_light</color>
+
 </resources>

@@ -1,42 +1,49 @@
 package com.nhlong.lumi.constellation;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.content.Intent;
+import android.content.res.Configuration;
+import android.os.Build;
+import android.view.Menu;
+import android.view.MenuItem;
 
-import androidx.appcompat.app.ActionBar;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.menu.SeslMenuItem;
 import androidx.appcompat.app.AppCompatDelegate;
 
-import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.MenuCompat;
 
-import com.google.android.material.appbar.CollapsingToolbarLayout;
+import java.util.ArrayList;
+import java.util.List;
+
+import lumi.constellation.layout.ToolbarLayout;
 
 import android.preference.PreferenceManager;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 
-public class SettingsActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener,
+public class LumiSettingsActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener,
         Preference.SummaryProvider<androidx.preference.ListPreference> {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.long266_main_settings_activity);
+        setContentView(R.layout.long266_settings_activity);
         if (savedInstanceState == null) {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.settings, new SettingsFragment())
+                    .replace(R.id.lumi_settings, new SettingsFragment())
                     .commit();
         }
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-
-        CollapsingToolbarLayout ctbl = (CollapsingToolbarLayout) findViewById(R.id.collapsing_app_bar);
-        ctbl.setTitle("Lumi\'s Constellation");
+		ToolbarLayout toolbarLayout = findViewById(R.id.lumiToolbarSettings);
+        toolbarLayout.setNavigationButtonTooltip(getString(R.string.sesl_action_bar_up_description));
+        toolbarLayout.setNavigationButtonOnClickListener(v -> onBackPressed());
 
         PreferenceManager.getDefaultSharedPreferences(this)
                 .registerOnSharedPreferenceChangeListener(this);
@@ -45,9 +52,20 @@ public class SettingsActivity extends AppCompatActivity implements SharedPrefere
 
     public static class SettingsFragment extends PreferenceFragmentCompat {
 
+        private Context mContext;
+        private LumiSettingsActivity mActivity;
+
+        @Override
+        public void onAttach(Context context) {
+            super.onAttach(context);
+            mContext = getContext();
+            if (getActivity() instanceof LumiSettingsActivity)
+                mActivity = ((LumiSettingsActivity) getActivity());
+        }
+
         @Override
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-            setPreferencesFromResource(R.xml.long266_main_preferences, rootKey);
+            setPreferencesFromResource(R.xml.long266_settings_preferences, rootKey);
 
         }
     }

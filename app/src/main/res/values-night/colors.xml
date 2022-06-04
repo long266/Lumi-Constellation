@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<color name="hoanglong_sesl_background_color">@color/sesl_background_color_dark</color>
-	<color name="hoanglong_sesl_action_bar_background_color">@color/sesl_action_bar_background_color_dark</color>
+
+    <!-- ToolbarLayout -->
+    <color name="lumi_n_badge_background_color">#ffef5e16</color>
+    <color name="lumi_n_badge_text_color">@color/sesl_black</color>
+
+    <!-- DrawerLayout -->
+    <color name="lumi_drawerlayout_drawer_dim_color">#cc000000</color>
+
+    <color name="lumi_round_and_bgcolor">@color/sesl_round_and_bgcolor_dark</color>
+    <color name="lumi_background_color">@color/sesl_background_color_dark</color>
+
 </resources>

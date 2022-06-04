@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <attr name="roundedCorners" format="integer">
@@ -10,12 +11,32 @@
     </attr>
 
     <!-- Custom Views -->
-    <declare-styleable name="RoundLinearLayout">
+    <declare-styleable name="LumiRoundLayout">
         <attr name="roundedCorners" />
     </declare-styleable>
 	
     <declare-styleable name="LumiCommonColorPickerPreference">
         <attr name="showAlphaSlider" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="ToolbarLayout">
+        <attr name="android:layout" />
+        <attr name="expandable" format="boolean" />
+        <attr name="expanded" format="boolean" />
+        <attr name="navigationIcon" format="reference" />
+        <attr name="title" format="string" />
+        <attr name="subtitle" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="ToolbarLayoutParams">
+        <attr name="layout_location">
+            <enum name="main_content" value="0" />
+            <enum name="appbar_header" value="1" />
+            <enum name="footer" value="2" />
+            <enum name="root" value="3" />
+            <enum name="drawer_header" value="4" />
+            <enum name="drawer_panel" value="5" />
+        </attr>
     </declare-styleable>
 
 </resources>
