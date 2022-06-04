@@ -13,5 +13,9 @@
     <declare-styleable name="RoundLinearLayout">
         <attr name="roundedCorners" />
     </declare-styleable>
+	
+    <declare-styleable name="LumiCommonColorPickerPreference">
+        <attr name="showAlphaSlider" format="boolean" />
+    </declare-styleable>
 
 </resources>

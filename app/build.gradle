@@ -32,12 +32,12 @@ dependencies {
     implementation 'io.github.oneuiproject.sesl:preference:1.1.0'
     implementation 'io.github.oneuiproject.sesl:material:1.1.0'
     implementation 'io.github.oneuiproject.sesl:picker-color:1.0.1'
+    implementation 'io.github.oneuiproject.sesl:recyclerview:1.1.0'
+    implementation 'io.github.oneuiproject.sesl:drawerlayout:1.1.0'
 }
 
 configurations.all {
     exclude group: 'androidx.appcompat', module: 'appcompat'
-    exclude group: 'androidx.coordinatorlayout', module: 'coordinatorlayout'
     exclude group: 'androidx.core', module: 'core'
-    exclude group: 'androidx.preference', module: 'preference'
     exclude group: 'com.google.android.material', module: 'material'
 }

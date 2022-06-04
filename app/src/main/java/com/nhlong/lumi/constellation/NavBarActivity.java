@@ -8,12 +8,12 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.Settings.System;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.preference.CheckBoxPreference;
@@ -27,6 +27,9 @@ import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.SwitchPreferenceCompat;
+
+import lumi.constellation.preference.LumiColorPickerPreference;
+import lumi.constellation.preference.LumiDetailedColorPickerPreference;
 
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 
@@ -313,11 +316,197 @@ public class NavBarActivity extends AppCompatActivity {
                 dispatchText((EditTextPreference) item, value);
             } else if (type.equals("SwitchPreferenceCompat")) {
                 dispatchSwitch((SwitchPreferenceCompat) item, value);
+            } else if (type.equals("LumiColorPickerPreference")) {
+                dispatchLumiColorPicker((LumiColorPickerPreference) item, value);
+            } else if (type.equals("LumiDetailedColorPickerPreference")) {
+                dispatchLumiDetailedColorPicker((LumiDetailedColorPickerPreference) item, value);
             } else if (type.equals("SeekBarPreference")) {
                 dispatchSeekBar(item, value);
             } else {
                 Log.e(NavBarActivity.LCAT, "Need to implement: " + type);
             }
+        }
+
+        private void dispatchLumiDetailedColorPicker(LumiDetailedColorPickerPreference item, Object value) {
+            if (item != null) {
+                String key = item.getKey();
+                String[] prefs;
+                String key1;
+                String key2;
+                String key3;
+                String key4;
+                String val;
+                if (key.startsWith("argb;")) {
+                    prefs = key.substring(5).split(";");
+                    if (prefs.length != 4) {
+                        Log.e(NavBarActivity.LCAT, "color prefs wrong size! : " + prefs.length);
+                        return;
+                    }
+                    key1 = prefs[0];
+                    int val1 = Color.alpha(((Integer) value).intValue());
+                    Log.d(NavBarActivity.LCAT, "ARGBS color prefs alpha: " + key1 + " > " + val1);
+                    if (key1.length() > 0) {
+                        NavBarActivity.setSettingInt(this.cr, key1, val1);
+                    }
+                    key2 = prefs[1];
+                    int val2 = Color.red(((Integer) value).intValue());
+                    Log.d(NavBarActivity.LCAT, "ARGBS color prefs red: " + key2 + " > " + val2);
+                    if (key2.length() > 0) {
+                        NavBarActivity.setSettingInt(this.cr, key2, val2);
+                    }
+                    key3 = prefs[2];
+                    int val3 = Color.green(((Integer) value).intValue());
+                    Log.d(NavBarActivity.LCAT, "ARGBS color prefs green: " + key3 + " > " + val3);
+                    if (key3.length() > 0) {
+                        NavBarActivity.setSettingInt(this.cr, key3, val3);
+                    }
+                    key4 = prefs[3];
+                    int val4 = Color.blue(((Integer) value).intValue());
+                    Log.d(NavBarActivity.LCAT, "ARGBS color prefs blue: " + key4 + " > " + val4);
+                    if (key4.length() > 0) {
+                        NavBarActivity.setSettingInt(this.cr, key4, val4);
+                    }
+                } else if (key.startsWith("argbf;")) {
+                    prefs = key.substring(6).split(";");
+                    if (prefs.length != 4) {
+                        Log.e(NavBarActivity.LCAT, "color prefs wrong size! : " + prefs.length);
+                        return;
+                    }
+                    key1 = prefs[0];
+                    float val12 = ((float) Color.alpha(((Integer) value).intValue())) / 255.0f;
+                    Log.d(NavBarActivity.LCAT, "ARGBFS color prefs alpha: " + key1 + " > " + val12);
+                    if (key1.length() > 0) {
+                        NavBarActivity.setSettingFloat(this.cr, key1, val12);
+                    }
+                    key2 = prefs[1];
+                    float val22 = ((float) Color.red(((Integer) value).intValue())) / 255.0f;
+                    Log.d(NavBarActivity.LCAT, "ARGBFS color prefs red: " + key2 + " > " + val22);
+                    if (key2.length() > 0) {
+                        NavBarActivity.setSettingFloat(this.cr, key2, val22);
+                    }
+                    key3 = prefs[2];
+                    float val32 = ((float) Color.green(((Integer) value).intValue())) / 255.0f;
+                    Log.d(NavBarActivity.LCAT, "ARGBFS color prefs green: " + key3 + " > " + val32);
+                    if (key3.length() > 0) {
+                        NavBarActivity.setSettingFloat(this.cr, key3, val32);
+                    }
+                    key4 = prefs[3];
+                    float val42 = ((float) Color.blue(((Integer) value).intValue())) / 255.0f;
+                    Log.d(NavBarActivity.LCAT, "ARGBFS color prefs blue: " + key4 + " > " + val42);
+                    if (key4.length() > 0) {
+                        NavBarActivity.setSettingFloat(this.cr, key4, val42);
+                    }
+                } else if (key.startsWith("argb_")) {
+                    key = key.substring(5);
+                    val = getRGB(((Integer) value).intValue(), true);
+                    Log.d(NavBarActivity.LCAT, "ARGB color prefs: " + key + " > " + val);
+                    NavBarActivity.setSettingString(this.cr, key, val);
+                } else if (key.startsWith("rgb_")) {
+                    key = key.substring(4);
+                    val = getRGB(((Integer) value).intValue(), false);
+                    Log.d(NavBarActivity.LCAT, "RGB color prefs: " + key + " > " + val);
+                    NavBarActivity.setSettingString(this.cr, key, val);
+                } else {
+                    NavBarActivity.setSettingInt(this.cr, key, ((Integer) value).intValue());
+                }
+            }
+        }
+
+        private void dispatchLumiColorPicker(LumiColorPickerPreference item, Object value) {
+            if (item != null) {
+                String key = item.getKey();
+                String[] prefs;
+                String key1;
+                String key2;
+                String key3;
+                String key4;
+                String val;
+                if (key.startsWith("argb;")) {
+                    prefs = key.substring(5).split(";");
+                    if (prefs.length != 4) {
+                        Log.e(NavBarActivity.LCAT, "color prefs wrong size! : " + prefs.length);
+                        return;
+                    }
+                    key1 = prefs[0];
+                    int val1 = Color.alpha(((Integer) value).intValue());
+                    Log.d(NavBarActivity.LCAT, "ARGBS color prefs alpha: " + key1 + " > " + val1);
+                    if (key1.length() > 0) {
+                        NavBarActivity.setSettingInt(this.cr, key1, val1);
+                    }
+                    key2 = prefs[1];
+                    int val2 = Color.red(((Integer) value).intValue());
+                    Log.d(NavBarActivity.LCAT, "ARGBS color prefs red: " + key2 + " > " + val2);
+                    if (key2.length() > 0) {
+                        NavBarActivity.setSettingInt(this.cr, key2, val2);
+                    }
+                    key3 = prefs[2];
+                    int val3 = Color.green(((Integer) value).intValue());
+                    Log.d(NavBarActivity.LCAT, "ARGBS color prefs green: " + key3 + " > " + val3);
+                    if (key3.length() > 0) {
+                        NavBarActivity.setSettingInt(this.cr, key3, val3);
+                    }
+                    key4 = prefs[3];
+                    int val4 = Color.blue(((Integer) value).intValue());
+                    Log.d(NavBarActivity.LCAT, "ARGBS color prefs blue: " + key4 + " > " + val4);
+                    if (key4.length() > 0) {
+                        NavBarActivity.setSettingInt(this.cr, key4, val4);
+                    }
+                } else if (key.startsWith("argbf;")) {
+                    prefs = key.substring(6).split(";");
+                    if (prefs.length != 4) {
+                        Log.e(NavBarActivity.LCAT, "color prefs wrong size! : " + prefs.length);
+                        return;
+                    }
+                    key1 = prefs[0];
+                    float val12 = ((float) Color.alpha(((Integer) value).intValue())) / 255.0f;
+                    Log.d(NavBarActivity.LCAT, "ARGBFS color prefs alpha: " + key1 + " > " + val12);
+                    if (key1.length() > 0) {
+                        NavBarActivity.setSettingFloat(this.cr, key1, val12);
+                    }
+                    key2 = prefs[1];
+                    float val22 = ((float) Color.red(((Integer) value).intValue())) / 255.0f;
+                    Log.d(NavBarActivity.LCAT, "ARGBFS color prefs red: " + key2 + " > " + val22);
+                    if (key2.length() > 0) {
+                        NavBarActivity.setSettingFloat(this.cr, key2, val22);
+                    }
+                    key3 = prefs[2];
+                    float val32 = ((float) Color.green(((Integer) value).intValue())) / 255.0f;
+                    Log.d(NavBarActivity.LCAT, "ARGBFS color prefs green: " + key3 + " > " + val32);
+                    if (key3.length() > 0) {
+                        NavBarActivity.setSettingFloat(this.cr, key3, val32);
+                    }
+                    key4 = prefs[3];
+                    float val42 = ((float) Color.blue(((Integer) value).intValue())) / 255.0f;
+                    Log.d(NavBarActivity.LCAT, "ARGBFS color prefs blue: " + key4 + " > " + val42);
+                    if (key4.length() > 0) {
+                        NavBarActivity.setSettingFloat(this.cr, key4, val42);
+                    }
+                } else if (key.startsWith("argb_")) {
+                    key = key.substring(5);
+                    val = getRGB(((Integer) value).intValue(), true);
+                    Log.d(NavBarActivity.LCAT, "ARGB color prefs: " + key + " > " + val);
+                    NavBarActivity.setSettingString(this.cr, key, val);
+                } else if (key.startsWith("rgb_")) {
+                    key = key.substring(4);
+                    val = getRGB(((Integer) value).intValue(), false);
+                    Log.d(NavBarActivity.LCAT, "RGB color prefs: " + key + " > " + val);
+                    NavBarActivity.setSettingString(this.cr, key, val);
+                } else {
+                    NavBarActivity.setSettingInt(this.cr, key, ((Integer) value).intValue());
+                }
+            }
+        }
+
+        private String getRGB(int color, boolean hasAlpha) {
+            int red = Color.red(color);
+            int green = Color.green(color);
+            int blue = Color.blue(color);
+            int alpha = Color.alpha(color);
+            String out = "#";
+            if (hasAlpha) {
+                out = new StringBuilder(String.valueOf(out)).append(alpha < 17 ? "0" : "").append(Integer.toHexString(alpha)).toString();
+            }
+            return new StringBuilder(String.valueOf(out)).append(red < 17 ? "0" : "").append(Integer.toHexString(red)).append(green < 17 ? "0" : "").append(Integer.toHexString(green)).append(blue < 17 ? "0" : "").append(Integer.toHexString(blue)).toString();
         }
 
         private void dispatchSeekBar(Preference item, Object value) {
@@ -387,11 +576,86 @@ public class NavBarActivity extends AppCompatActivity {
                 initList((ListPreference) item);
             } else if (type.equals("SwitchPreferenceCompat")) {
                 initSwitch((SwitchPreferenceCompat) item);
+            } else if (type.equals("LumiColorPickerPreference")) {
+                initLumiColorPicker((LumiColorPickerPreference) item);
+            } else if (type.equals("LumiDetailedColorPickerPreference")) {
+                initLumiDetailedColorPicker((LumiDetailedColorPickerPreference) item);
             } else if (type.equals("SeekBarPreference")) {
                 initSeekBar(item);
             } else {
                 Log.e(NavBarActivity.LCAT, "Need to implement: " + type);
             }
+        }
+
+        private void initLumiColorPicker(LumiColorPickerPreference item) {
+            item.setOnPreferenceChangeListener(this);
+            String key = item.getKey();
+            if (key.startsWith("argb;")) {
+                String[] prefs = key.substring(5).split(";");
+                if (prefs.length != 4) {
+                    Log.e(NavBarActivity.LCAT, "color prefs wrong size! : " + prefs.length);
+                    return;
+                }
+                setInitialColor(Color.argb(NavBarActivity.getSettingInt(this.cr, prefs[0]), NavBarActivity.getSettingInt(this.cr, prefs[1]), NavBarActivity.getSettingInt(this.cr, prefs[2]), NavBarActivity.getSettingInt(this.cr, prefs[3])));
+            } else if (key.startsWith("argbf;")) {
+                String[] prefs2 = key.substring(6).split(";");
+                if (prefs2.length != 4) {
+                    Log.e(NavBarActivity.LCAT, "color prefs wrong size! : " + prefs2.length);
+                    return;
+                }
+                setInitialColor(Color.argb(Integer.valueOf((int) (NavBarActivity.getSettingFloat(this.cr, prefs2[0]) * 255.0f)).intValue(), Integer.valueOf((int) (NavBarActivity.getSettingFloat(this.cr, prefs2[1]) * 255.0f)).intValue(), Integer.valueOf((int) (NavBarActivity.getSettingFloat(this.cr, prefs2[2]) * 255.0f)).intValue(), Integer.valueOf((int) (NavBarActivity.getSettingFloat(this.cr, prefs2[3]) * 255.0f)).intValue()));
+            } else if (key.startsWith("argb_")) {
+                String theColor = NavBarActivity.getSettingString(this.cr, key.substring(5));
+                if (theColor == null) {
+                    theColor = "#FF33B5E5";
+                }
+                setInitialColor(Color.parseColor(theColor));
+            } else if (key.startsWith("rgb_")) {
+                String theColor2 = NavBarActivity.getSettingString(this.cr, key.substring(4));
+                if (theColor2 == null) {
+                    theColor2 = "#33B5E5";
+                }
+                setInitialColor(Color.parseColor(theColor2));
+            } else {
+                setInitialColor(NavBarActivity.getSettingInt(this.cr, key));
+            }
+        }
+
+        private void initLumiDetailedColorPicker(LumiDetailedColorPickerPreference item) {
+            item.setOnPreferenceChangeListener(this);
+            String key = item.getKey();
+            if (key.startsWith("argb;")) {
+                String[] prefs = key.substring(5).split(";");
+                if (prefs.length != 4) {
+                    Log.e(NavBarActivity.LCAT, "color prefs wrong size! : " + prefs.length);
+                    return;
+                }
+                setInitialColor(Color.argb(NavBarActivity.getSettingInt(this.cr, prefs[0]), NavBarActivity.getSettingInt(this.cr, prefs[1]), NavBarActivity.getSettingInt(this.cr, prefs[2]), NavBarActivity.getSettingInt(this.cr, prefs[3])));
+            } else if (key.startsWith("argbf;")) {
+                String[] prefs2 = key.substring(6).split(";");
+                if (prefs2.length != 4) {
+                    Log.e(NavBarActivity.LCAT, "color prefs wrong size! : " + prefs2.length);
+                    return;
+                }
+                setInitialColor(Color.argb(Integer.valueOf((int) (NavBarActivity.getSettingFloat(this.cr, prefs2[0]) * 255.0f)).intValue(), Integer.valueOf((int) (NavBarActivity.getSettingFloat(this.cr, prefs2[1]) * 255.0f)).intValue(), Integer.valueOf((int) (NavBarActivity.getSettingFloat(this.cr, prefs2[2]) * 255.0f)).intValue(), Integer.valueOf((int) (NavBarActivity.getSettingFloat(this.cr, prefs2[3]) * 255.0f)).intValue()));
+            } else if (key.startsWith("argb_")) {
+                String theColor = NavBarActivity.getSettingString(this.cr, key.substring(5));
+                if (theColor == null) {
+                    theColor = "#FF33B5E5";
+                }
+                setInitialColor(Color.parseColor(theColor));
+            } else if (key.startsWith("rgb_")) {
+                String theColor2 = NavBarActivity.getSettingString(this.cr, key.substring(4));
+                if (theColor2 == null) {
+                    theColor2 = "#33B5E5";
+                }
+                setInitialColor(Color.parseColor(theColor2));
+            } else {
+                setInitialColor(NavBarActivity.getSettingInt(this.cr, key));
+            }
+        }
+
+        public void setInitialColor(int i) {
         }
 
         private void initSeekBar(Preference item) {

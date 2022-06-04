@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen
-    xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+  
+    <PreferenceCategory android:title="ColorPicker Test">
 
+        <lumi.constellation.preference.LumiDetailedColorPickerPreference android:title="Detailed" android:key="lumi_detailed_test" android:summary="Choose your color" app:showAlphaSlider="true" />
+
+        <lumi.constellation.preference.LumiColorPickerPreference android:title="Classic" android:key="lumi_classic_test" android:summary="Choose your color" app:showAlphaSlider="true" />
+	
+    </PreferenceCategory>
 
 </PreferenceScreen>
