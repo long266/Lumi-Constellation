@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <item android:id="@+id/lumi_status_bar" android:title="Status Bar" />
-    <item android:id="@+id/lumi_navigation_bar" android:title="Navigation Bar" />
-    <item android:id="@+id/lumi_quick_settings" android:title="Quick Settings" />
+    <item android:id="@+id/lumi_main" android:title="Home" />
+    <item android:icon="@drawable/ic_lumi_addons" android:id="@+id/lumi_add_ons" android:title="Add Ons" />
+    <item android:icon="@drawable/ic_lumi_statusbar" android:id="@+id/lumi_status_bar" android:title="Status Bar" />
+    <item android:icon="@drawable/ic_lumi_navbar" android:id="@+id/lumi_navigation_bar" android:title="Navigation Bar" />
+    <item android:icon="@drawable/ic_lumi_quicksettings" android:id="@+id/lumi_quick_settings" android:title="Quick Settings" />
 
 </menu>

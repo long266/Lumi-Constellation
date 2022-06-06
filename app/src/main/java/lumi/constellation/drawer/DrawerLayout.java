@@ -69,9 +69,9 @@ public class DrawerLayout extends ToolbarLayout {
 
     private boolean mIsRtl;
 
-    private androidx.drawerlayout.widget.DrawerLayout mDrawer;
+    public androidx.drawerlayout.widget.DrawerLayout mDrawer;
     private LinearLayout mToolbarContent;
-    private LinearLayout mDrawerContent;
+    public LinearLayout mDrawerContent;
     private View mHeaderView;
     private AppCompatImageButton mHeaderButton;
     private TextView mHeaderBadge;
