@@ -18,4 +18,14 @@
     <color name="lumi_round_and_bgcolor">@color/sesl_round_and_bgcolor_light</color>
     <color name="lumi_background_color">@color/sesl_background_color_light</color>
 
+	<color name="lumi_item_divider_color">#ff979797</color>
+
+
+    <!--Preference-->
+    <color name="sesl_list_divider_color">#ffe6e6e6</color>
+    <color name="widget_multi_button_selected_color">@color/color_primary</color>
+    <color name="widget_multi_button_unselected_color">#ff858585</color>
+    <color name="widget_multi_button_unselected_icon_color">#ff686868</color>
+    <color name="widget_multi_button_divider_color">#ffe6e6e6</color>
+
 </resources>

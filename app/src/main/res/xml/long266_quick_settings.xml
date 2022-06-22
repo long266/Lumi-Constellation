@@ -7,7 +7,11 @@
         <lumi.constellation.preference.LumiDetailedColorPickerPreference android:title="Detailed" android:key="lumi_detailed_test" android:summary="Choose your color" app:showAlphaSlider="true" />
 
         <lumi.constellation.preference.LumiColorPickerPreference android:title="Classic" android:key="lumi_classic_test" android:summary="Choose your color" app:showAlphaSlider="true" />
-	
+		
+		<lumi.constellation.preference.LumiHorizontalRadioPreference android:title="Horizontal Test" app:entries="@array/lumi_vertical_entries" android:key="lumi_horizontal_qs_panel_bg_use_new_tint" app:entryValues="@array/lumi_vertical_values" app:viewType="image" app:entriesImage="@array/lumi_vertical_images" />
+
+		<lumi.constellation.preference.LumiVerticalRadioPreference android:title="Vertical Test" app:entries="@array/lumi_horizontal_entries" android:key="lumi_vertical_qs_panel_bg_use_new_tint" app:entryValues="@array/lumi_horizontal_values" app:viewType="image" app:entriesImage="@array/lumi_horizontal_images" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>

@@ -19,39 +19,6 @@
         android:configChanges="uiMode"
         android:theme="@style/LumiConstellation.Default">
 		
-        <activity android:name=".StatusBarActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name=".StatusBarActivity" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".AddOnActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name=".AddOnActivity" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".QuickSettingsActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name=".QuickSettingsActivity" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".NavBarActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name=".NavBarActivity" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-		
         <activity android:name=".LumiSettingsActivity"
             android:exported="true">
             <intent-filter>

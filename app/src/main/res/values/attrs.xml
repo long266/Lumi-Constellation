@@ -39,4 +39,15 @@
         </attr>
     </declare-styleable>
 
+    <declare-styleable name="LumiHorizontalRadioPreference">
+        <attr name="entriesImage" format="reference" />
+        <attr name="entries" />
+        <attr name="entriesSubtitle" format="reference" />
+        <attr name="entryValues" />
+        <attr name="viewType" format="integer">
+            <enum name="image" value="0" />
+            <enum name="noImage" value="1" />
+        </attr>
+    </declare-styleable>
+
 </resources>

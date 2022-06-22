@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:clickable="false"
+    android:focusable="false"
+    android:orientation="horizontal">
+
+    <lumi.constellation.preference.internal.LumiVerticalRadioViewContainer
+        android:id="@+id/radio_layout_vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:clickable="false"
+        android:focusable="false"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/item1"
+            layout="@layout/lumi_vertical_radio_preference_item"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/item2"
+            layout="@layout/lumi_vertical_radio_preference_item"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/item3"
+            layout="@layout/lumi_vertical_radio_preference_item"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:visibility="gone" />
+
+    </lumi.constellation.preference.internal.LumiVerticalRadioViewContainer>
+
+</LinearLayout>

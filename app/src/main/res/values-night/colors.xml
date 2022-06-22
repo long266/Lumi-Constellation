@@ -11,4 +11,12 @@
     <color name="lumi_round_and_bgcolor">@color/sesl_round_and_bgcolor_dark</color>
     <color name="lumi_background_color">@color/sesl_background_color_dark</color>
 
+
+    <!--Preference-->
+    <color name="sesl_list_divider_color">#26d4d4d4</color>
+    <color name="widget_multi_button_selected_color">@color/color_control_activated</color>
+    <color name="widget_multi_button_unselected_color">#ffa8a9a9</color>
+    <color name="widget_multi_button_unselected_icon_color">#ff9c9c9c</color>
+    <color name="widget_multi_button_divider_color">#4de6e6e6</color>
+
 </resources>

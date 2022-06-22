@@ -2,32 +2,4 @@
 
 <PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <PreferenceCategory app:title="Test">
-
-        <PreferenceScreen
-            app:title="Status Bar"
-            app:summary="Customize your status bar">
-                <intent android:action=".StatusBarActivity"/>
-        </PreferenceScreen>
-
-        <PreferenceScreen
-            app:title="Navigation Bar"
-            app:summary="Customize your navigation bar">
-                <intent android:action=".NavBarActivity"/>
-        </PreferenceScreen>
-
-        <PreferenceScreen
-            app:title="Quick Settings"
-            app:summary="Customize your QS Panel">
-                <intent android:action=".QuickSettingsActivity"/>
-        </PreferenceScreen>
-
-        <PreferenceScreen
-            app:title="NL Add-ons"
-            app:summary="Extra customization">
-                <intent android:action=".AddOnActivity"/>
-        </PreferenceScreen>
-
-    </PreferenceCategory>
-
 </PreferenceScreen>

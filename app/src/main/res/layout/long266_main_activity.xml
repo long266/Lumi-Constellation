@@ -15,14 +15,6 @@
         app:layout_location="main_content"
 		app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-	<com.google.android.material.navigation.NavigationView
-		android:id="@+id/lumiNavigationView"
-		android:layout_width="wrap_content"
-		android:layout_height="match_parent"
-		android:layout_gravity="start"
-		android:background="@color/lumi_background_color"
-		app:layout_location="drawer_panel"
-		app:elevation="0dp"
-		app:menu="@menu/lumi_navigation_items"/>
+	<include layout="@layout/lumi_content_drawer" />
 
 </lumi.constellation.drawer.DrawerLayout>

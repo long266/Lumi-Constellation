@@ -11,4 +11,15 @@
         <item name="android:ellipsize">end</item>
     </style>
 
+    <!--Drawer-->
+    <style name="LumiDrawerDividerStyle">
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">2dp</item>
+        <item name="android:layout_marginStart">24dp</item>
+        <item name="android:layout_marginEnd">24dp</item>
+        <item name="android:background">@drawable/sesl_drawer_divider</item>
+    </style>
+
 </resources>
